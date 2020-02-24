@@ -185,6 +185,103 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-VNC setup on Raspberry Pi from Ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/05/VNC setup on Raspberry Pi from Ubuntu/">VNC setup on Raspberry Pi from Ubuntu</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/05/VNC setup on Raspberry Pi from Ubuntu/" class="archive-article-date">
+  	<time datetime="2017-06-05T10:06:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://mitchtech.net/vnc-setup-on-raspberry-pi-from-ubuntu/" target="_blank" rel="noopener">http://mitchtech.net/vnc-setup-on-raspberry-pi-from-ubuntu/</a></p>
+<p>通过SSH连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@192.168.0.112</span><br></pre></td></tr></table></figure>
+
+<p>默认用户名pi, 默认密码‘raspberry’</p>
+<p>配置VNC：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tightvncserver</span><br><span class="line">启动VNC：vncserver :1 -geometry 1024x600 -depth 16 -pixelformat rgb565</span><br><span class="line">连接VNC：vncviewer 192.168.0.112:5901</span><br><span class="line">停止VNC：vncserver -kill :1</span><br></pre></td></tr></table></figure>
+
+<p>关于’could not acquire name on session bus’：<br>参考<a href="https://github.com/TurboVNC/turbovnc/issues/86" target="_blank" rel="noopener">https://github.com/TurboVNC/turbovnc/issues/86</a></p>
+<p>配置~/.vnc/xstartup文件，增加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unset SESSION_MANAGER</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">exec /usr/bin/mate-session</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">System</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VNC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/05/VNC setup on Raspberry Pi from Ubuntu/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-修改SSH默认22端口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -863,90 +960,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-图片大小转换 ImageMagick" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/图片大小转换 ImageMagick/">图片大小转换 ImageMagick</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/29/图片大小转换 ImageMagick/" class="archive-article-date">
-  	<time datetime="2017-04-29T12:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.charry.org/docs/linux/ImageMagick/ImageMagick.html" title="图片转换 ImageMagick" target="_blank" rel="noopener">图片转换 ImageMagick</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">convert -flop foo.png bar.png</span><br><span class="line">convert foo.jpg foo.png  <span class="comment">#格式转化</span></span><br><span class="line">convert -resize 100x100 foo.jpg thumbnail.jpg  <span class="comment">#大小缩放</span></span><br><span class="line">convert -resize 50%x50% foo.jpg thumbnail.jpg  <span class="comment">#大小缩放</span></span><br><span class="line">convert -mattecolor <span class="string">"#000000"</span> -frame 60x60 yourname.jpg rememberyou.png  <span class="comment">#加边框</span></span><br><span class="line">convert -border 60x60 -bordercolor <span class="string">"#000000"</span> yourname.jpg rememberyou.png <span class="comment">#加边框</span></span><br><span class="line">convert -fill green -pointsize 40 -draw <span class="string">'text 10,50 "charry.org"'</span> foo.png bar.png <span class="comment">#加文字</span></span><br><span class="line">convert -blur 80 foo.jpg foo.png  <span class="comment">#高斯模糊</span></span><br><span class="line">convert -flip foo.png bar.png  <span class="comment">#上下翻转</span></span><br><span class="line">convert -flop foo.png bar.png  <span class="comment">#左右翻转</span></span><br><span class="line">convert -negate foo.png bar.png  <span class="comment">#反色,形成底片的样子</span></span><br><span class="line">convert -monochrome foo.png bar.png <span class="comment">#单色,把图片变为黑白颜色：</span></span><br><span class="line">convert -noise 3 foo.png bar.png <span class="comment">#加噪声</span></span><br><span class="line">convert -paint 4 foo.png bar.png <span class="comment">#油画效果</span></span><br><span class="line">convert -rotate 30 foo.png bar.png <span class="comment">#旋转</span></span><br><span class="line">convert -charcoal 2 foo.png bar.png <span class="comment">#炭笔效果</span></span><br><span class="line">convert -spread 30 foo.png bar.png <span class="comment">#散射,毛玻璃效果：</span></span><br><span class="line">convert -swirl 67 foo.png bar.png  <span class="comment">#漩涡,以图片的中心作为参照，把图片扭转，形成漩涡的效果：</span></span><br><span class="line">convert -raise 5x5 foo.png bar.png <span class="comment">#凸起效果</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ImageMagick</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/29/图片大小转换 ImageMagick/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/69/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/105/">105</a><a class="extend next" rel="next" href="/page/71/">Next &raquo;</a>
@@ -1180,15 +1193,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">

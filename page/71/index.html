@@ -185,6 +185,90 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-图片大小转换 ImageMagick" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/29/图片大小转换 ImageMagick/">图片大小转换 ImageMagick</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/29/图片大小转换 ImageMagick/" class="archive-article-date">
+  	<time datetime="2017-04-29T12:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.charry.org/docs/linux/ImageMagick/ImageMagick.html" title="图片转换 ImageMagick" target="_blank" rel="noopener">图片转换 ImageMagick</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">convert -flop foo.png bar.png</span><br><span class="line">convert foo.jpg foo.png  <span class="comment">#格式转化</span></span><br><span class="line">convert -resize 100x100 foo.jpg thumbnail.jpg  <span class="comment">#大小缩放</span></span><br><span class="line">convert -resize 50%x50% foo.jpg thumbnail.jpg  <span class="comment">#大小缩放</span></span><br><span class="line">convert -mattecolor <span class="string">"#000000"</span> -frame 60x60 yourname.jpg rememberyou.png  <span class="comment">#加边框</span></span><br><span class="line">convert -border 60x60 -bordercolor <span class="string">"#000000"</span> yourname.jpg rememberyou.png <span class="comment">#加边框</span></span><br><span class="line">convert -fill green -pointsize 40 -draw <span class="string">'text 10,50 "charry.org"'</span> foo.png bar.png <span class="comment">#加文字</span></span><br><span class="line">convert -blur 80 foo.jpg foo.png  <span class="comment">#高斯模糊</span></span><br><span class="line">convert -flip foo.png bar.png  <span class="comment">#上下翻转</span></span><br><span class="line">convert -flop foo.png bar.png  <span class="comment">#左右翻转</span></span><br><span class="line">convert -negate foo.png bar.png  <span class="comment">#反色,形成底片的样子</span></span><br><span class="line">convert -monochrome foo.png bar.png <span class="comment">#单色,把图片变为黑白颜色：</span></span><br><span class="line">convert -noise 3 foo.png bar.png <span class="comment">#加噪声</span></span><br><span class="line">convert -paint 4 foo.png bar.png <span class="comment">#油画效果</span></span><br><span class="line">convert -rotate 30 foo.png bar.png <span class="comment">#旋转</span></span><br><span class="line">convert -charcoal 2 foo.png bar.png <span class="comment">#炭笔效果</span></span><br><span class="line">convert -spread 30 foo.png bar.png <span class="comment">#散射,毛玻璃效果：</span></span><br><span class="line">convert -swirl 67 foo.png bar.png  <span class="comment">#漩涡,以图片的中心作为参照，把图片扭转，形成漩涡的效果：</span></span><br><span class="line">convert -raise 5x5 foo.png bar.png <span class="comment">#凸起效果</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ImageMagick</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/29/图片大小转换 ImageMagick/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vim 配置ctags cscope taglist" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -806,88 +890,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-《古文观止》/少年中国说-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/少年中国说-《古文观止》/">少年中国说</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/少年中国说-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>少年中国说</p>
-<p>〔清〕梁启超</p>
-<p>日本人之称我中国也，一则曰老大帝国，再则曰老大帝国。是语也，盖袭译欧西人之言也。呜呼！我中国其果老大矣乎？任公曰：恶！是何言！是何言！吾心目中有一少年中国在。</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/少年中国说-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/少年中国说-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/70/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><span class="space">&hellip;</span><a class="page-number" href="/page/105/">105</a><a class="extend next" rel="next" href="/page/72/">Next &raquo;</a>
@@ -1121,15 +1123,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
