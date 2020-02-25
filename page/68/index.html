@@ -185,6 +185,197 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/Docker3/">Docker常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/Docker3/" class="archive-article-date">
+  	<time datetime="2017-12-21T08:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Docker-—-从入门到实践"><a href="#Docker-—-从入门到实践" class="headerlink" title="Docker — 从入门到实践"></a><a href="https://www.gitbook.com/book/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a></h6><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>获取镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]</span><br></pre></td></tr></table></figure>
+
+<p>镜像名称的格式。</p>
+<ul>
+<li>Docker 镜像仓库地址：地址的格式一般是 &lt;域名/IP&gt;[:端口号]。默认地址是 Docker Hub。</li>
+<li>仓库名：如之前所说，这里的仓库名是两段式名称，即 &lt;用户名&gt;/&lt;软件名&gt;。对于 Docker Hub，如果不给出用户名，则默认为 library，也就是官方镜像。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ubuntu:16.04</span><br><span class="line">16.04: Pulling from library/ubuntu</span><br><span class="line">bf5d46315322: Pull complete</span><br><span class="line">9f13e0ac480c: Pull complete</span><br><span class="line">e8988b5b3097: Pull complete</span><br><span class="line">40af181810e7: Pull complete</span><br><span class="line">e6f7c7e5c03e: Pull complete</span><br><span class="line">Digest: sha256:147913621d9cdea08853f6ba9116c2e27a3ceffecf3b492983ae97c3d643fbbe</span><br><span class="line">Status: Downloaded newer image for ubuntu:16.04</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>运行</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it --rm \</span><br><span class="line">    ubuntu:16.04 \</span><br><span class="line">    bash</span><br><span class="line"></span><br><span class="line">root@e7009c6ce357:/# cat /etc/os-release</span><br><span class="line">NAME=&quot;Ubuntu&quot;</span><br><span class="line">VERSION=&quot;16.04.4 LTS, Trusty Tahr&quot;</span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=&quot;Ubuntu 16.04.4 LTS&quot;</span><br><span class="line">VERSION_ID=&quot;16.04&quot;</span><br><span class="line">HOME_URL=&quot;http://www.ubuntu.com/&quot;</span><br><span class="line">SUPPORT_URL=&quot;http://help.ubuntu.com/&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;http://bugs.launchpad.net/ubuntu/&quot;</span><br></pre></td></tr></table></figure>
+
+<p>参数。</p>
+<ul>
+<li>-it：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li>–rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 –rm 可以避免浪费空间。</li>
+<li>ubuntu:16.04：这是指用 ubuntu:16.04 镜像为基础来启动容器。</li>
+<li>bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 bash。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/12/21/Docker3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/Docker3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/Docker2/">Docker安装</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/Docker2/" class="archive-article-date">
+  	<time datetime="2017-12-21T08:35:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Docker-—-从入门到实践"><a href="#Docker-—-从入门到实践" class="headerlink" title="Docker — 从入门到实践"></a><a href="https://www.gitbook.com/book/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a></h6><h3 id="Ubuntu-安装-Docker-CE"><a href="#Ubuntu-安装-Docker-CE" class="headerlink" title="Ubuntu 安装 Docker CE"></a>Ubuntu 安装 Docker CE</h3><p>Docker CE 支持以下版本的 Ubuntu 操作系统：</p>
+<ul>
+<li>Artful 17.10 (Docker CE 17.11 Edge)</li>
+<li>Zesty 17.04</li>
+<li>Xenial 16.04 (LTS)</li>
+<li>Trusty 14.04 (LTS)</li>
+</ul>
+<p><strong>卸载旧版本</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove docker \</span><br><span class="line">               docker-engine \</span><br><span class="line">               docker.io</span><br></pre></td></tr></table></figure>
+
+<p><strong>Ubuntu 14.04 可选内核模块</strong><br><br>从 Ubuntu 14.04 开始，一部分内核模块移到了可选内核模块包 (linux-image-extra-*) ，以减少内核软件包的体积。正常安装的系统应该会包含可选内核模块包，而一些裁剪后的系统可能会将其精简掉。AUFS 内核驱动属于可选内核模块的一部分，作为推荐的 Docker 存储层驱动，一般建议安装可选内核模块包以使用 AUFS。</p>
+<p>如果系统没有安装可选内核模块的话，可以执行下面的命令来安装可选内核模块包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line"></span><br><span class="line">$ sudo apt-get install \</span><br><span class="line">    linux-image-extra-$(uname -r) \</span><br><span class="line">    linux-image-extra-virtual</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/21/Docker2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/Docker2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Docker1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -698,173 +889,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Linux内存文件系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/18/Linux内存文件系统/">Linux内存文件系统</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/18/Linux内存文件系统/" class="archive-article-date">
-  	<time datetime="2017-12-18T01:34:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Linux内存文件系统"><a href="#Linux内存文件系统" class="headerlink" title="Linux内存文件系统"></a>Linux内存文件系统</h1><h2 id="一、RamDisk"><a href="#一、RamDisk" class="headerlink" title="一、RamDisk"></a>一、RamDisk</h2><h3 id="RamDisk的使用"><a href="#RamDisk的使用" class="headerlink" title="RamDisk的使用"></a>RamDisk的使用</h3><p>RamDisk有三种实现方式：<br>第一种就是传统意义上的，可以格式化，然后加载。 这在Linux内核2.0/2.2就已经支持，其不足之处是大小固定，之后不能改变。为了能够使用Ramdisk，我们在编译内核时须将block device中的Ramdisk支持选上，它下面还有两个选项，一个是设定Ramdisk的大小，默认是4096k；另一个是initrd的支持。<br>如果对Ramdisk的支持已经编译进内核，我们就可以使用它了。</p>
-<p>查看可用的RamDisk</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ll /dev/ram*</span></span><br><span class="line">lrwxrwxrwx  1 root root     4 Feb 20 00:49 /dev/ram -&gt; ram1</span><br><span class="line">brw-rw----  1 root disk 1,  0 Apr 27 11:44 /dev/ram0</span><br><span class="line">brw-rw----  1 root disk 1,  1 Feb 20 00:49 /dev/ram1</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/12/18/Linux内存文件系统/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/18/Linux内存文件系统/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-正则表达式匹配中文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/12/正则表达式匹配中文/">正则表达式匹配中文</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/12/正则表达式匹配中文/" class="archive-article-date">
-  	<time datetime="2017-12-12T02:11:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="正则表达式匹配中文"><a href="#正则表达式匹配中文" class="headerlink" title="正则表达式匹配中文"></a>正则表达式匹配中文</h3><p>Notepad++中用正则表达式匹配中文 通常正则表达式匹配中文可以利用Unicode的特点，使用[\u4e00-\u9fa5]匹配。但在Notepad++中不能正常使用。<br>解决方法是，首先将编码转换成Unicode（菜单-&gt;格式-&gt;转换为UTF-8，如果不转换可能匹配出错），然后使用[\x{4e00}-\x{9fa5}]就可以实现匹配中文了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.(text|hint).*[\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+.*</span><br></pre></td></tr></table></figure>
-
-<h3 id="grep过滤中文（非ASCII字符）"><a href="#grep过滤中文（非ASCII字符）" class="headerlink" title="grep过滤中文（非ASCII字符）"></a>grep过滤中文（非ASCII字符）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep --color=<span class="string">'auto'</span> -P -n <span class="string">"[\x80-\xFF]"</span> *</span><br></pre></td></tr></table></figure>
-
-<p>其中-n展示行号，-P等于–perl-regexp，使用perl正则表达式。<br>根据你的设置，在一些系统上述表达式不起左右，需要grep字符的补集：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep --color=<span class="string">'auto'</span> -P -n <span class="string">"[^\x00-\x7F]"</span> *</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/12/正则表达式匹配中文/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/67/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/105/">105</a><a class="extend next" rel="next" href="/page/69/">Next &raquo;</a>
@@ -1014,6 +1038,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -1030,14 +1062,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -1046,11 +1070,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">tech</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tech</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1070,11 +1094,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
