@@ -185,6 +185,180 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue中的export-default命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/01/Vue中的export-default命令/">Vue中的export default命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/01/Vue中的export-default命令/" class="archive-article-date">
+  	<time datetime="2017-11-01T12:47:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>export default</strong> 命令，为模块指定默认输出</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码是一个模块文件export-default.js，它的默认输出是一个函数。<br>其他模块加载该模块时，import命令可以为该匿名函数指定任意名字。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码的import命令，可以用任意名称指向export-default.js输出的方法，这时就不需要知道原模块输出的函数名。需要注意的是，这时import命令后面，不使用大括号。</p>
+        
+          <a class="article-more-a" href="/2017/11/01/Vue中的export-default命令/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">export default</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/01/Vue中的export-default命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/git命令/">git命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/16/git命令/" class="archive-article-date">
+  	<time datetime="2017-06-16T10:02:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com-personal:H***/ffmpeg.git</span><br><span class="line">cd ffmpeg/</span><br><span class="line">git remote -v</span><br><span class="line">git remote add upstream git://source.ffmpeg.org/ffmpeg.git</span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line">git fetch upstream</span><br><span class="line">git checkout master</span><br><span class="line">git merge upstream/master</span><br><span class="line"></span><br><span class="line">git checkout -b dev</span><br><span class="line">git push --set-upstream origin dev</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/06/16/git命令/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">版本控制</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/16/git命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux下SpeedTest测速" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -707,242 +881,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/Linux常用命令/">Linux常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/29/Linux常用命令/" class="archive-article-date">
-  	<time datetime="2017-04-29T12:43:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>app-last.apk指向最新的文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iZuf65bu4ubtj00dz46ge7Z html]# cat makeLast.sh</span><br><span class="line">rm app-last.apk</span><br><span class="line">ln -s `ls -rt *.apk | tail -n1` app-last.apk</span><br></pre></td></tr></table></figure>
-
-<p>To unrar files with… unrar:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unrar-free</span><br><span class="line">unrar e some.rar</span><br></pre></td></tr></table></figure>
-
-<p>To extract rar files with 7-zip:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install p7zip-full</span><br><span class="line">7z x some.rar</span><br></pre></td></tr></table></figure>
-
-<p>e and x mean extract obviously.</p>
-<p>Panel : Config reset</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># This worked for me in GNOME Classic on 12.04 to reset the gnome-panel configuration:</span><br><span class="line">dconf reset -f /org/gnome/gnome-panel/</span><br><span class="line">killall gnome-panel</span><br></pre></td></tr></table></figure>
-
-<p>Linux常用命令</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ctrl-R : 查找历史命令</span><br><span class="line">Ctrl-W : 删除最后一个单词</span><br><span class="line">Ctrl-U : 删除一行</span><br><span class="line">cd – : 回到上一次的工作目录</span><br><span class="line">man bash查找Readline Key Bindings一节来看看bash的默认热键</span><br><span class="line">使用 mtr 会比使用 traceroute 要更容易定位一个网络问题。</span><br><span class="line"></span><br><span class="line">pip install &apos;requests[security]&apos;  # pip : SNIMissingWarning, InsecurePlatformWarning</span><br></pre></td></tr></table></figure>
-
-<p>Cleaning the ccache</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> Compiling code in Linux will will produce a .ccache folder in the users home directory, used by the program ccache.  Often times this folder can grow to be quite large and should be regularly cleaned.  To clean the ccache issue the following command to instruct ccache to clean its cache.</span><br><span class="line">$ ccache -C</span><br></pre></td></tr></table></figure>
-
-<p>查看占用进程端口的PID</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ss -lptn &apos;sport = :80&apos;</span><br></pre></td></tr></table></figure>
-
-<p>crontab的文件格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">分 时 日 月 星期 要运行的命令</span><br><span class="line"></span><br><span class="line">第1列分钟0～59</span><br><span class="line">第2列小时0～23（0表示子夜）</span><br><span class="line">第3列日1～31</span><br><span class="line">第4列月1～12</span><br><span class="line">第5列星期0～7（0和7表示星期天）</span><br><span class="line">第6列要运行的命令</span><br><span class="line"></span><br><span class="line"># 查看日志：tail -f /var/log/cron</span><br></pre></td></tr></table></figure>
-
-<p>certbot</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./certbot-auto certonly --agree-tos --standalone --email xxx@gmail.com -d www.???.com,m.???.com</span><br><span class="line">./certbot-auto certonly --agree-tos --webroot --email xxx@gmail.com -d www.???.com,m.???.com</span><br><span class="line">./certbot-auto certonly --agree-tos --webroot --force-renew --email xxx@gmail.com -d www.???.com,m.???.com</span><br><span class="line">/root/certbot-auto renew --force-renew</span><br><span class="line"></span><br><span class="line">/root/certbot-auto certonly -w /etc/letsencrypt/ --webroot --agree-tos --expand -d test.domain.com</span><br></pre></td></tr></table></figure>
-
-<p>certbot使用crontab更新letsencrypt证书</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * 15 * * /root/certbot-auto renew --force-renew</span><br></pre></td></tr></table></figure>
-
-<p>Linux查看文件夹大小du -sh 查看当前文件夹大小</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">du -sh * | sort -n #统计当前文件夹(目录)大小，并按文件大小排序</span><br><span class="line">du -sch .[!.]* * |sort -h  #统计当前文件夹(目录)大小，并按文件大小排序, 包括隐藏目录</span><br></pre></td></tr></table></figure>
-
-<p>Notepad++中用正则表达式匹配中文 通常正则表达式匹配中文可以利用Unicode的特点，使用[\u4e00-\u9fa5]匹配。但在Notepad++中不能正常使用。 解决方法是，首先将编码转换成Unicode（菜单-&gt;格式-&gt;转换为UTF-8，如果不转换可能匹配出错），然后使用[\x{4e00}-\x{9fa5}]就可以实现匹配中文了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.(text|hint).*[\x&#123;4e00&#125;-\x&#123;9fa5&#125;]+.*</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">date +&quot;%Y-%m-%d %T&quot;</span><br><span class="line"></span><br><span class="line">file -sL /dev/sd*     //  How do I tell what sort of data (what data format) is in a file?</span><br><span class="line">UUID=3c05a2da-4e6b-4ba7-855e-62914e67c99f /home/war/aosp  ext3    defaults rw 0 0    // sudo vi /etc/fstab</span><br><span class="line">/dev/sda1       /work/          ntfs    defaults,umask=022,uid=1000,gid=1000          0       0</span><br><span class="line">/dev/sda5       /media/         ntfs    defaults,umask=022,uid=1000,gid=1000          0       0</span><br><span class="line">/dev/sda6       /aosp/          ntfs    defaults,umask=022,uid=1000,gid=1000          0       0</span><br><span class="line">sudo ntfslabel /dev/sdb1 my_external   //修改ntfs卷的Label</span><br><span class="line">sudo e2label  &lt;label&gt;          //修改ext2, ext3, and ext4卷的Label</span><br><span class="line">#挂载指定挂载点</span><br><span class="line">sudo rmdir /media/your_username</span><br><span class="line">sudo ln -s /media /media/your_username</span><br><span class="line">sudo mkfs -t ext4 /dev/sda1           //格式化ext4类型</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">find /path -name &apos;*.cpp&apos; |xargs wc -l   //统计一个项目的代码数：</span><br><span class="line">grep --color=&apos;auto&apos; -P -n &quot;[\x80-\xFF]&quot; file.xml   //grep for non-ASCII characters in UNIX :</span><br><span class="line"></span><br><span class="line">:write ++enc=utf-8 russian.txt       //VIM 编码转换</span><br><span class="line"> :%s/s1/s2/g                         //VIM 替换</span><br><span class="line"></span><br><span class="line"> find . -name \*.py | xargs grep some_function</span><br><span class="line"> awk ‘&#123; x += $3 &#125; END &#123; print x &#125;’       # 求第三列的数字之和</span><br></pre></td></tr></table></figure>
-
-<p>reads a file passed as an argument line by line:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">while IFS=&apos;&apos; read -r line || [[ -n &quot;$line&quot; ]]; do</span><br><span class="line">    #echo &quot;Text read from file: $line&quot;</span><br><span class="line">    grep -q \&quot;$line\&quot; strings.xml</span><br><span class="line">    if [ $? != 0 ]; then</span><br><span class="line">        echo $line, &quot;unmatched&quot;</span><br><span class="line">    fi</span><br><span class="line">done &lt; &quot;$1&quot;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="服务器搭建常用命令"><a href="#服务器搭建常用命令" class="headerlink" title="服务器搭建常用命令"></a>服务器搭建常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pstree -p</span><br><span class="line">netstat -lntp</span><br><span class="line">nohup / <span class="built_in">disown</span></span><br><span class="line">pgrep / pkill</span><br><span class="line">man 7 signal</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://www.tldp.org/HOWTO/HighQuality-Apps-HOWTO/boot.html" title="Designing Integrated High Quality Linux Applications" target="_blank" rel="noopener">Designing Integrated High Quality Linux Applications</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#build /etc/init.d/mysystem</span></span><br><span class="line"></span><br><span class="line">service mysystem start</span><br><span class="line">service mysystem status</span><br><span class="line">service mysystem reload</span><br><span class="line">service mysystem stop</span><br><span class="line"></span><br><span class="line">update-rc.d &lt;service&gt; defaults</span><br><span class="line">update-rc.d &lt;service&gt; start 20 3 4 5</span><br><span class="line">update-rc.d -f &lt;service&gt;  remove</span><br><span class="line"><span class="comment">#chkconfig --add mysystem</span></span><br><span class="line"><span class="comment">#chkconfig --del mysystem</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="SVN服务器："><a href="#SVN服务器：" class="headerlink" title="SVN服务器："></a>SVN服务器：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo svnserve -d --foreground -r /opt/svn   <span class="comment">#Bash</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="openvpn"><a href="#openvpn" class="headerlink" title="openvpn"></a>openvpn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openvpn</span><br><span class="line">sudo openvpn --config /path/to/config.ovpn</span><br></pre></td></tr></table></figure>
-
-<h3 id="tinyproxy"><a href="#tinyproxy" class="headerlink" title="tinyproxy"></a>tinyproxy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tinyproxy</span><br><span class="line"><span class="comment">#config /etc/tinyproxy.conf</span></span><br><span class="line">sudo iptables -I INPUT -p tcp --dport 8888 -j ACCEPT</span><br><span class="line"></span><br><span class="line">service tinyproxy &lt;start|stop|restart|status&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="mysql-server"><a href="#mysql-server" class="headerlink" title="mysql server"></a><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04" title="How To Install MySQL on Ubuntu 14.04" target="_blank" rel="noopener">mysql server</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo mysql_secure_installation</span><br><span class="line">sudo mysql_install_db</span><br><span class="line"></span><br><span class="line">sudo service mysql &lt;start|stop|restart|status&gt;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/29/Linux常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-centos6安装python35" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/centos6安装python35/">centos6安装python3.5、pip3.5、easy_install-3.5</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/29/centos6安装python35/" class="archive-article-date">
-  	<time datetime="2017-04-29T12:43:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>centos6自带python2.6版本，根据需要，安装python3.5、easy_install-3.5、pip3.5</p>
-<p>安装依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum groupinstall -y Development tools</span><br><span class="line">yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装Python3-5"><a href="#安装Python3-5" class="headerlink" title="安装Python3.5"></a>安装Python3.5</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz</span><br><span class="line">xz -d Python-3.5.2.tar.xz</span><br><span class="line">tar xvf Python-3.5.2.tar</span><br><span class="line"></span><br><span class="line">cd Python-3.5.2</span><br><span class="line">./configure --prefix=/usr/local</span><br><span class="line">make &amp;&amp; make install &amp;&amp; echo OK</span><br><span class="line"></span><br><span class="line"># 切换Python版本</span><br><span class="line">make altinstall</span><br><span class="line"># 强制安装pip版本</span><br><span class="line">python -m pip install --upgrade --force-reinstall pip</span><br></pre></td></tr></table></figure>
-
-<p>安装完后的python的可执行文件目录是 /usr/local/bin</p>
-<p>安装完后的python安装目录路径是 /usr/local/lib/python3.5</p>
-<p>此时可通过python3.5命令验证安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python3.5</span><br><span class="line">Python 3.5.2 (default, Jul 11 2016, 09:15:05)</span><br><span class="line">[GCC 4.4.7 20120313 (Red Hat 4.4.7-17)] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# python3.5 -V</span><br><span class="line">Python 3.5.2</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装-setuptools-easy-install-3-5-pip3-5"><a href="#安装-setuptools-easy-install-3-5-pip3-5" class="headerlink" title="安装 setuptools(easy_install-3.5) + pip3.5"></a>安装 setuptools(easy_install-3.5) + pip3.5</h3><p>注意：一定要使用 python3.5 来执行相关命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 下载setuptools,easy_install 的安装包</span><br><span class="line">wget https://bootstrap.pypa.io/ez_setup.py</span><br><span class="line"></span><br><span class="line">#安装easy_install-3.5</span><br><span class="line">python3.5 ez_setup.py</span><br><span class="line"></span><br><span class="line">#安装完成后/usr/local/bin/目录下出现easy_install-3.5</span><br><span class="line"></span><br><span class="line">#安装pip3.5</span><br><span class="line">easy_install-3.5 pip</span><br><span class="line"></span><br><span class="line">#安装完成后/usr/local/bin/目录下出现pip3.5</span><br><span class="line"></span><br><span class="line">#升级pip3.5版本</span><br><span class="line">pip3.5 install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-<p>至此easy_install-3.5、pip3.5安装完成</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/29/centos6安装python35/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/70/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><span class="space">&hellip;</span><a class="page-number" href="/page/106/">106</a><a class="extend next" rel="next" href="/page/72/">Next &raquo;</a>
@@ -1056,11 +994,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,11 +1086,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1164,15 +1102,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">export default</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Server</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -185,6 +185,190 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android性能优化-过渡绘制解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/Android性能优化-过渡绘制解决方案/">Android性能优化-过度绘制解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/22/Android性能优化-过渡绘制解决方案/" class="archive-article-date">
+  	<time datetime="2018-05-22T02:17:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-过度绘制"><a href="#1-过度绘制" class="headerlink" title="1 过度绘制"></a>1 过度绘制</h3><p> 屏幕上某一像素点在一帧中被重复绘制多次，就是过度绘制。</p>
+<p>下图中多个卡片跌在一起，但是只有第一个卡片是完全可见的。背后的卡片只有部分可见。但是Android系统在绘制时会将下层的卡片进行绘制，接着再将上层的卡片进行绘制。但其实，下层卡片不可见的部分是不需要进行绘制的，只有可见部分才需要进行绘制。</p>
+<p><img src="/img/20180522a.png" alt></p>
+<p>依据过度绘制的层度可以分成：</p>
+<ul>
+<li>无过度绘制（一个像素只被绘制了一次）</li>
+<li>过度绘制x1（一个像素被绘制了两次）</li>
+<li>过度绘制x2（一个像素被绘制了三次）</li>
+<li>过度绘制x3（一个像素被绘制了四次）</li>
+<li>过度绘制x4+（一个像素被绘制了五次以上）
+        
+          <a class="article-more-a" href="/2018/05/22/Android性能优化-过渡绘制解决方案/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/22/Android性能优化-过渡绘制解决方案/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-docker常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/docker常用命令/">docker常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/docker常用命令/" class="archive-article-date">
+  	<time datetime="2018-05-21T07:06:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Manage-Docker-as-a-non-root-user"><a href="#Manage-Docker-as-a-non-root-user" class="headerlink" title="Manage Docker as a non-root user"></a>Manage Docker as a non-root user</h3><ul>
+<li>Add the docker group if it doesn’t already exist:<br><code>sudo groupadd docker</code></li>
+<li>Add the connected user “$USER” to the docker group. Change the user name to match your preferred user if you do not want to use your current user:<br><code>sudo gpasswd -a $USER docker</code></li>
+<li>Either do a <code>newgrp docker</code> or <code>log out/in</code> to activate the changes to groups.</li>
+</ul>
+<p>You can use</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>to check if you can run docker without sudo.</p>
+<h3 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker compose"></a>安装docker和docker compose</h3><p>1、安装docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure>
+
+<p>2、安装 docker compose，资料：install-compose</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 构建</span><br><span class="line">docker-compose build</span><br><span class="line"># 运行</span><br><span class="line">docker-compose up  // 按下ctrl+c退出停止。</span><br><span class="line"># 后台运行</span><br><span class="line">docker-compose up -d</span><br><span class="line"># 查看compose启动的各个容器的状态：</span><br><span class="line">docker-compose ps</span><br><span class="line"># 进入某个容器,譬如php：</span><br><span class="line">docker-compose exec php bash</span><br><span class="line"># 退出某个容器</span><br><span class="line">exit</span><br><span class="line"># 停止 docker compose启动的容器：</span><br><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure>
+
+<p>docker 位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">docker build -t humilton/nginx-google-proxy .</span><br><span class="line">docker run --restart always -d --name nginx-google-proxy humilton/nginx-google-proxy:latest</span><br><span class="line">docker exec -ti gorush /bin/sh</span><br><span class="line"></span><br><span class="line">docker container ls</span><br><span class="line">docker stop &lt;container id&gt;</span><br><span class="line">docker rm &lt;container id&gt;</span><br><span class="line">docker rmi &lt;image id&gt;</span><br><span class="line"></span><br><span class="line"># docker中批量删除 tag为none的镜像</span><br><span class="line">docker images|grep none|awk &apos;&#123;print $3&#125;&apos;|xargs docker rmi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker-compose down -v  # 删除volumes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">To show only running containers use the given command:</span><br><span class="line"></span><br><span class="line">docker ps</span><br><span class="line">To show all containers use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -a</span><br><span class="line">To show the latest created container (includes all states) use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -l</span><br><span class="line">To show n last created containers (includes all states) use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -n=-1</span><br><span class="line">To display total file sizes use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -s</span><br><span class="line">The content presented above is from docker.com.</span><br><span class="line"></span><br><span class="line">In The New Version Of Docker, Commands Are Update, Some Management Commands Are Added:</span><br><span class="line"></span><br><span class="line">docker container ls</span><br><span class="line">Is Used to list all the running containers.</span><br><span class="line"></span><br><span class="line">docker container ls -a</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/docker常用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-目前主流的三种数据库加密技术对比" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -685,181 +869,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Where Is The Apache Configuration File In CentOS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/">Where Is The Apache Configuration File In CentOS?</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/15/Where Is The Apache Configuration File In CentOS/" class="archive-article-date">
-  	<time datetime="2018-04-15T05:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>How can we find where the default configuration files for the httpd package in CentOS are located?</p>
-<p>By using the RPM command we can query a package to find all of its associated configuration files. Failing that we can use the find command to search the file system for these files, as we will see here.</p>
-<h3 id="RPM-Query-Configuration-Files"><a href="#RPM-Query-Configuration-Files" class="headerlink" title="RPM Query Configuration Files"></a>RPM Query Configuration Files</h3><p>The options we will use with the RPM command are -q to query a package, and -c which will list the configuration files that are part of the package. As shown below we have run RPM with the -qc options on the httpd package, which is where Apache comes from in CentOS.</p>
-        
-          <a class="article-more-a" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Server</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Installing Redis on a Raspberry Pi for caching" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/">Installing Redis on a Raspberry Pi for caching</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/" class="archive-article-date">
-  	<time datetime="2018-04-13T14:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/rpi-redis.jpeg" alt></p>
-<p><a href="https://habilisbest.com/install-redis-on-your-raspberrypi" target="_blank" rel="noopener">Installing Redis on a Raspberry Pi for caching</a></p>
-<hr>
-<p>If you want to configure caching to speed up web apps you may want to run on your Raspberry Pi. Or, it could be that some web apps, even require caching for their stable operation.</p>
-<p>Whatever the case may be, caching could be a life saver, when installed and configured properly.</p>
-<p>In this article, I will show how I install Redis on my Raspberry Pis. First of all, we need to download the latest stable release of Redis.</p>
-        
-          <a class="article-more-a" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/64/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/63/">63</a><a class="page-number" href="/page/64/">64</a><span class="page-number current">65</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/106/">106</a><a class="extend next" rel="next" href="/page/66/">Next &raquo;</a>
@@ -973,11 +982,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,11 +1074,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,15 +1090,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">export default</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Server</a>
               </li>
              
               <li class="article-tag-list-item">
