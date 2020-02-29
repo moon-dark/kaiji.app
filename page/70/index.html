@@ -185,6 +185,87 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-代理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/代理/">代理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/19/代理/" class="archive-article-date">
+  	<time datetime="2017-12-19T03:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="curl-wget-设置代理："><a href="#curl-wget-设置代理：" class="headerlink" title="curl/wget 设置代理："></a><a href="https://stackoverflow.com/questions/800805/how-do-i-make-curl-ignore-the-proxy" target="_blank" rel="noopener">curl/wget 设置代理：</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 设置系统属性</span><br><span class="line">export http_proxy=http://your-ip-address:port/</span><br><span class="line">export http_proxy=http://user:password@your-proxy-ip-address:port/</span><br><span class="line">export https_proxy=https://your-ip-address:port/</span><br><span class="line">export https_proxy=https://user:password@your-proxy-ip-address:port/</span><br><span class="line"></span><br><span class="line"># 直接使用</span><br><span class="line">curl -x http://proxy_server:proxy_port --proxy-user username:password -L http://url</span><br><span class="line">curl --socks5 125.119.175.48:8909 http://example.com/</span><br><span class="line">curl -x socks5://[user:password@]proxyhost[:port]/ http://example.com/</span><br><span class="line"></span><br><span class="line"># 编辑~/.wgetrc</span><br><span class="line">use_proxy = on</span><br><span class="line">http_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line">https_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line">ftp_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line"># 直接使用</span><br><span class="line">wget -e &quot;http_proxy=porxyhost:port&quot; www.baidu.com</span><br><span class="line">wget -e use_proxy=yes -e http_proxy=$proxy http://askubuntu.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="curl-wget-忽略代理："><a href="#curl-wget-忽略代理：" class="headerlink" title="curl/wget 忽略代理："></a><a href="https://stackoverflow.com/questions/800805/how-do-i-make-curl-ignore-the-proxy" target="_blank" rel="noopener">curl/wget 忽略代理：</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --noproxy &quot;*&quot; http://www.stackoverflow.com</span><br><span class="line">wget -e use_proxy=no http://www.stackoverflow.com</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">proxy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/19/代理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android开发常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -755,83 +836,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-图辑：东京地铁通勤的震撼照片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/">图辑：东京地铁通勤的震撼照片</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/12/图辑：东京地铁通勤的震撼照片/" class="archive-article-date">
-  	<time datetime="2017-11-12T06:14:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/9BAE/production/_97045893_abdf988f-6d8b-44f1-acaa-0537db6890e2.jpg" alt></p>
-<p>就像埋葬在庞贝古城灰烬下的身体的姿势——手臂摆出夸张的动作，或者嘴巴张开，气呼到窗户上，水汽从玻璃上滑落——迈克尔·沃尔夫（Michael Wolf）的《东京挤车》（Tokyo Compression）照片中的许多人也似乎被迫摆出奇怪的姿势。然而，这些都不是摆拍：这些都是地铁通勤每天都会出现的扭曲姿势。</p>
-        
-          <a class="article-more-a" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wall</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/69/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/107/">107</a><a class="extend next" rel="next" href="/page/71/">Next &raquo;</a>
@@ -981,19 +985,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,10 +1029,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">SELinux</a>
               </li>
              
@@ -1042,6 +1042,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1085,10 +1089,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ctags</a>
               </li>
              
@@ -1098,6 +1098,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VIM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编译</a>
               </li>
              
               <li class="article-tag-list-item">
