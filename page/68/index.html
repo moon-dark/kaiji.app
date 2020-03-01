@@ -185,6 +185,94 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/数据库/">数据库常见命令</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/16/数据库/" class="archive-article-date">
+  	<time datetime="2018-01-16T02:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="检查mysql数据库存放目录"><a href="#检查mysql数据库存放目录" class="headerlink" title="检查mysql数据库存放目录"></a>检查mysql数据库存放目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#进入数据库</span><br><span class="line">show variables like &apos;%dir%&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="MySQL-my-cnf-location"><a href="#MySQL-my-cnf-location" class="headerlink" title="MySQL my.cnf location"></a>MySQL my.cnf location</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># There is no internal MySQL command to trace this, it&apos;s a little too abstract. The file might be in 5 (or more?) locations, and  they would all be valid because they load cascading.</span><br><span class="line"></span><br><span class="line">/etc/my.cnf</span><br><span class="line">/etc/mysql/my.cnf</span><br><span class="line">$MYSQL_HOME/my.cnf</span><br><span class="line">[datadir]/my.cnf</span><br><span class="line">~/.my.cnf</span><br></pre></td></tr></table></figure>
+
+<h1 id="Create-User"><a href="#Create-User" class="headerlink" title="Create User:"></a>Create User:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;finley&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;finley&apos;@&apos;localhost&apos;</span><br><span class="line">    -&gt;     WITH GRANT OPTION;</span><br><span class="line">mysql&gt; CREATE USER &apos;finley&apos;@&apos;%&apos; IDENTIFIED BY &apos;password&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;finley&apos;@&apos;%&apos;</span><br><span class="line">    -&gt;     WITH GRANT OPTION;</span><br><span class="line">mysql&gt; CREATE USER &apos;admin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos;;</span><br><span class="line">mysql&gt; GRANT RELOAD,PROCESS ON *.* TO &apos;admin&apos;@&apos;localhost&apos;;</span><br><span class="line">mysql&gt; CREATE USER &apos;dummy&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u username -p database_name &lt; file.sql</span><br></pre></td></tr></table></figure>
+
+<p>Get the path of running Apache</p>
+<p>$ ps -ef | grep apache<br>apache   12846 14590  0 Oct20 ?        00:00:00 /usr/sbin/apache2<br>Append -V argument to the path</p>
+<p>$ /usr/sbin/apache2 -V | grep SERVER_CONFIG_FILE<br>-D SERVER_CONFIG_FILE=”/etc/apache2/apache2.conf”</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tool</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/16/数据库/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-动态规划经典——石子归并" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -784,90 +872,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-how-to-be-remembered-in-1000-years" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/27/how-to-be-remembered-in-1000-years/">how to be remembered in 1000 years</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/27/how-to-be-remembered-in-1000-years/" class="archive-article-date">
-  	<time datetime="2017-12-27T01:40:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_640/images/live/p0/5r/n3/p05rn3vm.jpg" alt></p>
-<p>有很多人生前极尽荣耀，但死后迅速被人遗忘。那么<a href="http://www.bbc.com/future/story/20171220-how-to-be-remembered-in-1000-years" target="_blank" rel="noopener">谁会在一千年后仍然被人记住</a>？如何被人永远记住？想要获得永久名声的候选人面临着诸多挑战，其中包括竞争对手的嫉妒和文明及语言可能的消亡。但从成功者的故事里我们能找到一些线索。</p>
-<ul>
-<li>塑造形象：马其顿的亚历山大大帝是个非常注重包装的人，是个自我推销的大师，在征服世界的过程中有一群历史学家陪同为他书写历史，这一策略在现代仍然行之有效。</li>
-<li>职业选择：影响人类思想的哲学家，有影响深远发明发现的科学家以及艺术家，根据 2013 年的一项研究，世界最有影响力的学者马克思。</li>
-<li>最好不要出生在皇家，因为皇家一代接着一代，没人会记住一千年的女王是谁。</li>
-<li>你需要有好运气。需要在身后留下东西，比如秦始皇留下的长城和兵马俑使他被铭记至今。</li>
-<li>要死得特别著名，比如凯撒。</li>
-<li>或者你可以选择成为著名恶棍，比如开膛手杰克、黑胡子海盗，希特勒和恐怖伊凡。
-        
-          <a class="article-more-a" href="/2017/12/27/how-to-be-remembered-in-1000-years/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/27/how-to-be-remembered-in-1000-years/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/67/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/107/">107</a><a class="extend next" rel="next" href="/page/69/">Next &raquo;</a>
@@ -1017,19 +1021,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1089,15 +1093,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">export default</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1121,6 +1125,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ctags</a>
               </li>
              
@@ -1130,10 +1138,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VIM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编译</a>
               </li>
              
               <li class="article-tag-list-item">
