@@ -185,6 +185,178 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-10-条提升-Android-性能的建议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/10-条提升-Android-性能的建议/">10 条提升 Android 性能的建议</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/16/10-条提升-Android-性能的建议/" class="archive-article-date">
+  	<time datetime="2018-01-16T06:46:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="10-条提升-Android-性能的建议"><a href="#10-条提升-Android-性能的建议" class="headerlink" title="10 条提升 Android 性能的建议"></a><a href="https://academy.realm.io/cn/posts/droidcon-farber-improving-android-app-performance/" target="_blank" rel="noopener">10 条提升 Android 性能的建议</a></h1><p>每个人都知道一个 App 的成功，与这个 App 的性能体验有着很密切的关系。但是如何让你的 App 拥有极致性能体验呢？在 DroidCon NYC 2015 的这个分享里，Boris Farber 带来了他关于 Android Api 以及如何避免一些常见坑的经验。带你了解如何缩短启动时间，优化滑动效果，创建更加顺滑的用户体验。</p>
+<hr>
+<p>Save the date for <a href="http://sf.droidcon.com/" target="_blank" rel="noopener">Droidcon SF</a> in March — a conference with best-in-class presentations from leaders in all parts of the Android ecosystem.</p>
+<hr>
+        
+          <a class="article-more-a" href="/2018/01/16/10-条提升-Android-性能的建议/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/16/10-条提升-Android-性能的建议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android-Tips" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/Android-Tips/">Android Tips</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/16/Android-Tips/" class="archive-article-date">
+  	<time datetime="2018-01-16T05:51:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看包目录"><a href="#查看包目录" class="headerlink" title="查看包目录"></a>查看包目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">run-as yourappPackageName</span><br><span class="line">cd /data/data/youappPackageName</span><br><span class="line">ls -all</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-lineageos，导致微信，网易崩溃"><a href="#安装-lineageos，导致微信，网易崩溃" class="headerlink" title="安装 lineageos，导致微信，网易崩溃"></a>安装 lineageos，导致微信，网易崩溃</h2><p>编辑<code>/system/build.prop</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#ddalvik.vm.heapstartsize=8m</span><br><span class="line">#dalvik.vm.heapgrowthlimit=288m</span><br><span class="line">#dalvik.vm.heapsize=768m</span><br><span class="line">dalvik.vm.heapstartsize=16m</span><br><span class="line">dalvik.vm.heapgrowthlimit=320m</span><br><span class="line">dalvik.vm.heapsize=512m</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dalvik.vm.heapstartsize<br>   堆分配的初始大小，调整这个值会影响到应用的流畅性和整体ram消耗。这个值越小，系统ram消耗越慢，但是由于初始值较小，一些较大的应用需要扩张这个堆，从而引发gc和堆调整的策略，会应用反应更慢。相反，这个值越大系统ram消耗越快，但是程序更流畅。</li>
+<li>dalvik.vm.heapgrowthlimit<br>   受控情况下的极限堆（仅仅针对dalvik堆，不包括native堆）大小，dvm heap是可增长的，但是正常情况下dvm heap的大小是不会超过dalvik.vm.heapgrowthlimit的值（非正常情况下面会详细说明）。这个值控制那些受控应用的极限堆大小，如果受控的应用dvm heap size超过该值，则将引发oom（out of memory）。</li>
+<li>dalvik.vm.heapsize<br>  不受控情况下的极限堆大小，这个就是堆的最大值。不管它是不是受控的。这个值会影响非受控应用的dalvik heap size。一旦dalvik heap size超过这个值，直接引发oom。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/01/16/Android-Tips/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/16/Android-Tips/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-「跳一跳」拿到高分，全靠这些骚外挂" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -698,180 +870,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-P2P-使用Webrtc构建移动平台P2P通讯方案3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案3/">使用Webrtc构建移动平台P2P通讯方案：WebRTC文件传输</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案3/" class="archive-article-date">
-  	<time datetime="2018-01-02T07:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>WebRTC，名称源自网页即时通信（英语：Web Real-Time Communication）的缩写，是一个支持网页浏览器进行实时语音对话或视频对话的API。它于2011年6月1日开源并在Google、Mozilla、Opera支持下被纳入万维网联盟的W3C推荐标准。</p>
-<p>下面是一个 WebRTC 的架构，显示了 RTCPeerConnection 的作用:<br><img src="https://raw.githubusercontent.com/RWebRTC/Blog/pictures/pictures/webrtcArchitecture.png" alt><br>从 JavaScript 观点看，从图表中主要需要理解 RTCPeerConnection 向开发者屏蔽了底层复杂的东西。WebRTC 使用的协议和解码器做了大量的工作才使得实时通信成为了可能，甚至在不可靠的网络的情况下：</p>
-<ul>
-<li>数据包丢包隐藏</li>
-<li>回声消除</li>
-<li>宽带自适应</li>
-<li>动态抖动缓冲</li>
-<li>TODO 自动增益控制</li>
-<li>降噪</li>
-<li>图片清除</li>
-</ul>
-        
-          <a class="article-more-a" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webrtc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-P2P-使用Webrtc构建移动平台P2P通讯方案2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案2/">使用Webrtc构建移动平台P2P通讯方案: 信令服务端(Signaling server)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案2/" class="archive-article-date">
-  	<time datetime="2018-01-02T06:25:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Socket.IO 是一个面向实时 web 应用的 JavaScript 库。它使得服务器和客户端之间实时双向的通信成为可能。他有两个部分：在浏览器中运行的客户端库，和一个面向Node.js的服务端库。两者有着几乎一样的API。像Node.js一样，它也是事件驱动的.</p>
-<p>Socket.IO 主要使用WebSocket协议。但是如果需要的话，Socket.io可以回退到几种其它方法，例如Adobe Flash Sockets，JSONP拉取，或是传统的AJAX拉取，并且在同时提供完全相同的接口。尽管它可以被用作WebSocket的包装库，它还是提供了许多其它功能，比如广播至多个套接字，存储与不同客户有关的数据，和异步IO操作。</p>
-<p><strong>socket.io</strong>  <a href="https://github.com/socketio/socket.io" target="_blank" rel="noopener">链接</a><br><br>socket.io支持Java，C++，Swift语言<br></p>
-<ul>
-<li><p>跨平台支持：<br><img src="https://camo.githubusercontent.com/fface5a8523859ace9b349fc8922af0a8d6941f4/68747470733a2f2f73617563656c6162732e636f6d2f62726f777365722d6d61747269782f736f636b65742e737667" alt></p>
-        
-          <a class="article-more-a" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webrtc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/02/P2P-使用Webrtc构建移动平台P2P通讯方案2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/67/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/107/">107</a><a class="extend next" rel="next" href="/page/69/">Next &raquo;</a>
@@ -1029,6 +1027,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
@@ -1042,14 +1048,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测速</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
