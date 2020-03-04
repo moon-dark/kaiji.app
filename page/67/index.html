@@ -185,6 +185,182 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-智能设备上的二维码解码优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/23/智能设备上的二维码解码优化/">智能设备上的二维码解码优化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/23/智能设备上的二维码解码优化/" class="archive-article-date">
+  	<time datetime="2018-05-23T03:04:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-二维码扫码库介绍"><a href="#1-二维码扫码库介绍" class="headerlink" title="1. 二维码扫码库介绍"></a>1. 二维码扫码库介绍</h3><p>二维码又称 QR Code ，QR 全称 Quick Response，是一个近几年来移动设备上超流行的一种编码方式，它比传统的Bar Code条形码能存更多的信息，也能表示更多的数据类型。</p>
+<p>二维条码/二维码（2-dimensional bar code）是用某种特定的几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的；在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理：它具有条码技术的一些共性：每种码制有其特定的字符集；每个字符占有一定的宽度；具有一定的校验功能等。同时还具有对不同行的信息自动识别功能、及处理图形旋转变化点。</p>
+<p>目前市面上的 主流的二维码解析库主要有 Zxing及 Zbar</p>
+<p>Zxing是一个开源 Java 类库用于解析多种格式的1D/2D条形码，能够对QR编码、Data Matrix、UPC 的1D条形码进行解码。其提供了多种平台下的客户端包括：J2ME 、J2SE和 Android等。目前在 android 手机上应用广泛。</p>
+<p>Zbar用C/C++实现，Zbar 可以直接扫码二维码和条码，在iphone上应用广泛。</p>
+<p>笔者在讯联数据从事扫码支付工作时，目前正在进行智能设备上二维码的扫码优化，提高扫码的速度与效率，本文就记录些可优化的点，供各位参考。</p>
+<p>笔者主要研究的是主要是解码库Zxing,下面文章以 Zxing 作为说明。</p>
+<h3 id="2-解码-优化"><a href="#2-解码-优化" class="headerlink" title="2. 解码 优化"></a>2. 解码 优化</h3><h6 id="2-1-减少解码格式"><a href="#2-1-减少解码格式" class="headerlink" title="2.1. 减少解码格式"></a>2.1. 减少解码格式</h6><p>zxing默认支持15种格式，支持格式有QR Code、Aztec、Code 128、Code 39、EAN-8    等等。然后我们在实际中用不到这么多解码样式，我们常见的二维码格式是 QR Code，一维码格式为 Code 128, 如果无特殊要求，这两种格式就能满足一般的条码与二维码的需求。 在解码过程中减少一种解码，就会减少解析时间，提高解码速度。</p>
+        
+          <a class="article-more-a" href="/2018/05/23/智能设备上的二维码解码优化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/23/智能设备上的二维码解码优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android性能优化-过渡绘制解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/Android性能优化-过渡绘制解决方案/">Android性能优化-过度绘制解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/22/Android性能优化-过渡绘制解决方案/" class="archive-article-date">
+  	<time datetime="2018-05-22T02:17:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-过度绘制"><a href="#1-过度绘制" class="headerlink" title="1 过度绘制"></a>1 过度绘制</h3><p> 屏幕上某一像素点在一帧中被重复绘制多次，就是过度绘制。</p>
+<p>下图中多个卡片跌在一起，但是只有第一个卡片是完全可见的。背后的卡片只有部分可见。但是Android系统在绘制时会将下层的卡片进行绘制，接着再将上层的卡片进行绘制。但其实，下层卡片不可见的部分是不需要进行绘制的，只有可见部分才需要进行绘制。</p>
+<p><img src="/img/20180522a.png" alt></p>
+<p>依据过度绘制的层度可以分成：</p>
+<ul>
+<li>无过度绘制（一个像素只被绘制了一次）</li>
+<li>过度绘制x1（一个像素被绘制了两次）</li>
+<li>过度绘制x2（一个像素被绘制了三次）</li>
+<li>过度绘制x3（一个像素被绘制了四次）</li>
+<li>过度绘制x4+（一个像素被绘制了五次以上）
+        
+          <a class="article-more-a" href="/2018/05/22/Android性能优化-过渡绘制解决方案/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/22/Android性能优化-过渡绘制解决方案/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -690,182 +866,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Glide OOM问题解决方法汇总" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/16/Glide OOM问题解决方法汇总/">Glide OOM问题解决方法汇总</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/16/Glide OOM问题解决方法汇总/" class="archive-article-date">
-  	<time datetime="2018-04-16T08:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>1、引入largeHeap属性，让系统为App分配更多的独立内存。</li>
-<li>2、禁止Glide内存缓存。设置skipMemoryCache(true)。</li>
-<li>3、自定义GlideModule。设置MemoryCache和BitmapPool大小。</li>
-<li>4、升级到Glide4.0，使用asDrawable代替asBitmap，drawable更省内存。</li>
-<li>5、ImageView的scaleType为fitXY时，改为fitCenter/centerCrop/fitStart/fitEnd显示。</li>
-<li>6、不使用application作为context。当context为application时，会把imageView是生命周期延长到整个运行过程中，imageView不能被回收，从而造成OOM异常。</li>
-<li>7、使用application作为context。但是对ImageView使用弱引用或软引用，尽量使用SoftReference，当内存不足时，将及时回收无用的ImageView。</li>
-<li>8、当列表在滑动的时候，调用Glide的pauseRequests()取消请求，滑动停止时，调用resumeRequests()恢复请求。</li>
-<li>9、Try catch某些大内存分配的操作。考虑在catch里面尝试一次降级的内存分配操作。例如decode bitmap的时候，catch到OOM，可以尝试把采样比例再增加一倍之后，再次尝试decode。</li>
-<li>10、BitmapFactory.Options和BitmapFactory.decodeStream获取原始图片的宽、高，绕过Java层加载Bitmap，再调用Glide的override(width,height)控制显示。</li>
-<li>11、图片局部加载。参考：SubsamplingScaleImageView，先将图片下载到本地，然后去加载，只加载当前可视区域，在手指拖动的时候再去加载另外的区域。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/16/Glide OOM问题解决方法汇总/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Where Is The Apache Configuration File In CentOS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/">Where Is The Apache Configuration File In CentOS?</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/15/Where Is The Apache Configuration File In CentOS/" class="archive-article-date">
-  	<time datetime="2018-04-15T05:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>How can we find where the default configuration files for the httpd package in CentOS are located?</p>
-<p>By using the RPM command we can query a package to find all of its associated configuration files. Failing that we can use the find command to search the file system for these files, as we will see here.</p>
-<h3 id="RPM-Query-Configuration-Files"><a href="#RPM-Query-Configuration-Files" class="headerlink" title="RPM Query Configuration Files"></a>RPM Query Configuration Files</h3><p>The options we will use with the RPM command are -q to query a package, and -c which will list the configuration files that are part of the package. As shown below we have run RPM with the -qc options on the httpd package, which is where Apache comes from in CentOS.</p>
-        
-          <a class="article-more-a" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Server</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/15/Where Is The Apache Configuration File In CentOS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/66/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="page-number current">67</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="space">&hellip;</span><a class="page-number" href="/page/108/">108</a><a class="extend next" rel="next" href="/page/68/">Next &raquo;</a>
@@ -1023,19 +1023,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1047,11 +1047,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tech</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">tech</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,15 +1087,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">export default</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Server</a>
               </li>
              
               <li class="article-tag-list-item">
