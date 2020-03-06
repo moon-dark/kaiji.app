@@ -185,6 +185,179 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/docker常用命令/">docker常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/docker常用命令/" class="archive-article-date">
+  	<time datetime="2018-05-21T07:06:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Manage-Docker-as-a-non-root-user"><a href="#Manage-Docker-as-a-non-root-user" class="headerlink" title="Manage Docker as a non-root user"></a>Manage Docker as a non-root user</h3><ul>
+<li>Add the docker group if it doesn’t already exist:<br><code>sudo groupadd docker</code></li>
+<li>Add the connected user “$USER” to the docker group. Change the user name to match your preferred user if you do not want to use your current user:<br><code>sudo gpasswd -a $USER docker</code></li>
+<li>Either do a <code>newgrp docker</code> or <code>log out/in</code> to activate the changes to groups.</li>
+</ul>
+<p>You can use</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>to check if you can run docker without sudo.</p>
+<h3 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker compose"></a>安装docker和docker compose</h3><p>1、安装docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure>
+
+<p>2、安装 docker compose，资料：install-compose</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 构建</span><br><span class="line">docker-compose build</span><br><span class="line"># 运行</span><br><span class="line">docker-compose up  // 按下ctrl+c退出停止。</span><br><span class="line"># 后台运行</span><br><span class="line">docker-compose up -d</span><br><span class="line"># 查看compose启动的各个容器的状态：</span><br><span class="line">docker-compose ps</span><br><span class="line"># 进入某个容器,譬如php：</span><br><span class="line">docker-compose exec php bash</span><br><span class="line"># 退出某个容器</span><br><span class="line">exit</span><br><span class="line"># 停止 docker compose启动的容器：</span><br><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure>
+
+<p>docker 位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">docker build -t humilton/nginx-google-proxy .</span><br><span class="line">docker run --restart always -d --name nginx-google-proxy humilton/nginx-google-proxy:latest</span><br><span class="line">docker exec -ti gorush /bin/sh</span><br><span class="line"></span><br><span class="line">docker container ls</span><br><span class="line">docker stop &lt;container id&gt;</span><br><span class="line">docker rm &lt;container id&gt;</span><br><span class="line">docker rmi &lt;image id&gt;</span><br><span class="line"></span><br><span class="line"># docker中批量删除 tag为none的镜像</span><br><span class="line">docker images|grep none|awk &apos;&#123;print $3&#125;&apos;|xargs docker rmi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker-compose down -v  # 删除volumes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">To show only running containers use the given command:</span><br><span class="line"></span><br><span class="line">docker ps</span><br><span class="line">To show all containers use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -a</span><br><span class="line">To show the latest created container (includes all states) use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -l</span><br><span class="line">To show n last created containers (includes all states) use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -n=-1</span><br><span class="line">To display total file sizes use the given command:</span><br><span class="line"></span><br><span class="line">docker ps -s</span><br><span class="line">The content presented above is from docker.com.</span><br><span class="line"></span><br><span class="line">In The New Version Of Docker, Commands Are Update, Some Management Commands Are Added:</span><br><span class="line"></span><br><span class="line">docker container ls</span><br><span class="line">Is Used to list all the running containers.</span><br><span class="line"></span><br><span class="line">docker container ls -a</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/docker常用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-目前主流的三种数据库加密技术对比" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/目前主流的三种数据库加密技术对比/">目前主流的三种数据库加密技术对比</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/目前主流的三种数据库加密技术对比/" class="archive-article-date">
+  	<time datetime="2018-05-21T06:03:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>导读：现今数据库加密技术主要有三大类，分别是前置代理及加密网关方式、应用层加密方式以及后置代理方式。这三类技术各自的特点如何，彼此之间孰优孰劣，下文详尽介绍。</p>
+<p>数据库加密作为近年来兴起的数据库安防技术，已经被越来越多的人所重视。这种基于存储层加密的防护方式，不仅可以有效解决数据库明文存储引起的泄密风险，也可以防止来自内部或者外部的入侵及越权访问行为。</p>
+<p>从技术手段上来看，现今数据库加密技术主要有三大类，分别是前置代理及加密网关方式、应用层加密方式以及后置代理方式。这三类技术各自的特点如何，彼此之间孰优孰劣，下文详尽介绍。</p>
+        
+          <a class="article-more-a" href="/2018/05/21/目前主流的三种数据库加密技术对比/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/目前主流的三种数据库加密技术对比/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-利用Nginx反向代理谷歌" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -227,11 +400,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wall</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wall</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
         		</li>
       		
 		</ul>
@@ -693,193 +866,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Installing Redis on a Raspberry Pi for caching" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/">Installing Redis on a Raspberry Pi for caching</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/" class="archive-article-date">
-  	<time datetime="2018-04-13T14:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/rpi-redis.jpeg" alt></p>
-<p><a href="https://habilisbest.com/install-redis-on-your-raspberrypi" target="_blank" rel="noopener">Installing Redis on a Raspberry Pi for caching</a></p>
-<hr>
-<p>If you want to configure caching to speed up web apps you may want to run on your Raspberry Pi. Or, it could be that some web apps, even require caching for their stable operation.</p>
-<p>Whatever the case may be, caching could be a life saver, when installed and configured properly.</p>
-<p>In this article, I will show how I install Redis on my Raspberry Pis. First of all, we need to download the latest stable release of Redis.</p>
-        
-          <a class="article-more-a" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/13/Installing Redis on a Raspberry Pi for caching/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cannot login as mysql user root from normal user account" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/cannot login as mysql user root from normal user account/">cannot login as mysql user root from normal user account</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/07/cannot login as mysql user root from normal user account/" class="archive-article-date">
-  	<time datetime="2018-04-07T13:31:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>1.First, connect in sudo mysql</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>2.Check your accounts present in your db</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT User,Host FROM mysql.user;</span><br><span class="line">+------------------+-----------+</span><br><span class="line">| User             | Host      |</span><br><span class="line">+------------------+-----------+</span><br><span class="line">| admin            | localhost |</span><br><span class="line">| debian-sys-maint | localhost |</span><br><span class="line">| magento_user     | localhost |</span><br><span class="line">| mysql.sys        | localhost |</span><br><span class="line">| root             | localhost |</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.Delete current root@localhost account</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DROP USER &apos;root&apos;@&apos;localhost&apos;;</span><br><span class="line">Query OK, 0 rows affected (0,00 sec)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.Recreate your user</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;&apos;;</span><br><span class="line">Query OK, 0 rows affected (0,00 sec)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.Give permissions to your user (don’t forget to flush privileges)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; WITH GRANT OPTION;</span><br><span class="line">Query OK, 0 rows affected (0,00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br><span class="line">Query OK, 0 rows affected (0,01 sec)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6.Exit MySQL and try to reconnect without sudo.</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">database</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/07/cannot login as mysql user root from normal user account/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/67/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/109/">109</a><a class="extend next" rel="next" href="/page/69/">Next &raquo;</a>
@@ -977,6 +963,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wall</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -985,19 +975,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wall</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BBC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1029,11 +1015,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1045,19 +1031,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,15 +1087,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">export default</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Server</a>
               </li>
              
               <li class="article-tag-list-item">
