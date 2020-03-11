@@ -185,6 +185,82 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-中文人名姓氏中的多音字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/中文人名姓氏中的多音字/">中文人名姓氏中的多音字</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/07/中文人名姓氏中的多音字/" class="archive-article-date">
+  	<time datetime="2018-05-07T02:55:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近做用户名称的suggest，涉及到音字转换的问题。需求就是除了直接用汉字可以进行suggest外，还可通过拼音进行人名的suggest。当前，我们的做法是采用的pinyin4j来做音字转换，但其实对于中文姓氏来说，往往多音字的转换会导致一些错误。如“zheng”，suggest的时候会有“丁军”出现，搜“chen”的时候，suggest会有  “沈吉”出现。</p>
+        
+          <a class="article-more-a" href="/2018/05/07/中文人名姓氏中的多音字/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/07/中文人名姓氏中的多音字/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-久石让_为龙猫_天空之城_千与千寻注入音乐生命" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -811,101 +887,9 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Show-office-doc-on-Android" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/08/Show-office-doc-on-Android/">Android 阅读 Office 文档</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/08/Show-office-doc-on-Android/" class="archive-article-date">
-  	<time datetime="2018-02-08T13:35:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="可用的解决方案："><a href="#可用的解决方案：" class="headerlink" title="可用的解决方案："></a>可用的解决方案：</h1><p>Android 阅读 Office 文档，总体来说，一是采用开源库，本地解析；二是采用WebView 网页显示，三是打开本地应用。参考<a href="http://yifeng.studio/2016/11/06/android-office-document-viewer/" target="_blank" rel="noopener">Android 阅读 Office 文档，所有你能想到的解决方案都在这啦</a>所说的，主流的有如下几种：</p>
-<h3 id="WebView-网页显示："><a href="#WebView-网页显示：" class="headerlink" title="WebView 网页显示："></a>WebView 网页显示：</h3><h2 id="Google-Doc"><a href="#Google-Doc" class="headerlink" title="Google Doc"></a>Google Doc</h2><p>类似 iOS ，Google 也提供了一种在线文档解析的功能，只需要按照固定的格式将远程文档的 Url 地址传给 Google 服务器，即可利用 WebView 控件加载新的 Url 地址，显示即可。WebView 加载的 Url 地址格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.google.com/gview?embedded=true&amp;url=文档地址</span><br></pre></td></tr></table></figure>
-
-<p>优点：使用简单，无需服务器和客户端的额外部署工作。<br>缺点：国内需要翻墙访问。</p>
-<h3 id="打开本地应用"><a href="#打开本地应用" class="headerlink" title="打开本地应用"></a>打开本地应用</h3><p>如果移动设备中安装有能够打开 Office 文档的本地应用，也可以借助它们打开所要操作的文档，当然前提是必须先将远程文档下载到设备的本地存储空间中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(Intent.ACTION_VIEW);</span><br><span class="line">intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">//officeFile：本地文档；type：文档MIMEType类型，可以使用文件格式后缀</span><br><span class="line">intent.setDataAndType(Uri.fromFile(officeFile), type);</span><br><span class="line">if (intent.resolveActivity(getPackageManager())!=null)&#123;</span><br><span class="line">  startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>优点：可读可写。<br>缺点：需要先行下载，同时设备中存在能够打开文档的本地应用，并且阅读时会离开当前应用。</p>
-        
-          <a class="article-more-a" href="/2018/02/08/Show-office-doc-on-Android/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Google</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/08/Show-office-doc-on-Android/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/69/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/110/">110</a><a class="extend next" rel="next" href="/page/71/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/69/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/111/">111</a><a class="extend next" rel="next" href="/page/71/">Next &raquo;</a>
     </nav>
   
 
@@ -1004,10 +988,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BBC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -1016,11 +996,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color4">BBC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1052,14 +1036,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -1073,6 +1049,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
