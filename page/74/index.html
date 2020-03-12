@@ -185,6 +185,97 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Transmission" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/Transmission/">Linux服务：阿里云/树莓派配置BT下载软件Transmission</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/Transmission/" class="archive-article-date">
+  	<time datetime="2017-12-21T01:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为树莓派在长城宽带多层NAT下面，BT下载软件全红。所以想阿里云上配置BT服务：</p>
+<h3 id="先按照树莓派的方案安装Transmission软件："><a href="#先按照树莓派的方案安装Transmission软件：" class="headerlink" title="先按照树莓派的方案安装Transmission软件："></a>先按照树莓派的方案安装Transmission软件：</h3><p>安装transmission-daemon</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install transmission-daemon</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后第一件事情就是停止transmission-daemon服务，否则你后面做的修改保存不下来的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service transmission-daemon stop</span><br></pre></td></tr></table></figure>
+
+<p>配置transmission-daemon</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/transmission-daemon/settings.json</span><br></pre></td></tr></table></figure>
+
+<p>一般使用，只需要修改一下下面的内容就好了，需要查看完整的参数说明，请<a href="https://trac.transmissionbt.com/wiki/ConfigurationParameters" target="_blank" rel="noopener">参考官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 下面这个参数指定下载地址</span><br><span class="line">&quot;download-dir&quot;: &quot;/home/pi/media/bt/downloads&quot;,</span><br><span class="line"># 下面这个参数指定同时下载的任务数量</span><br><span class="line">&quot;download-queue-size&quot;: 2,</span><br><span class="line"># 下面这个参数表示未完成的任务放在另一个地方，我们就不用了。</span><br><span class="line">&quot;incomplete-dir-enabled&quot;: false,</span><br><span class="line"># 下面的参数开启远程web管理界面</span><br><span class="line">&quot;rpc-enabled&quot;: true,</span><br><span class="line"># 下面这个参数表示web管理界面是否需要密码，我们选是</span><br><span class="line">&quot;rpc-authentication-required&quot;: true,</span><br><span class="line"># 下面的参数就是web管理界面的管理信息，大家看着改成自己的内容就好了</span><br><span class="line">&quot;rpc-username&quot;: &quot;登录名&quot;,</span><br><span class="line">&quot;rpc-password&quot;: &quot;明文密码（保存后自动变成密文）&quot;,</span><br><span class="line">&quot;rpc-port&quot;: 9091,</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/21/Transmission/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/Transmission/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-代理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -759,83 +850,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-NASA延时视频在2-5分钟内显示20年的季节性变化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/">从太空看我们的星球</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/" class="archive-article-date">
-  	<time datetime="2017-11-18T12:48:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>美国宇航局（NASA)全新的延时视频显示了全球20年的季节性景观变化，将这些年份的画面缩短到只有2.5分钟。尽管NASA主要以其太空任务而闻名，但该机构也广泛关注地球科学。这个新视频中的内容是自1997年以来每年由NASA卫星收集的。</p>
-<p><img src="https://static.cnbetacdn.com/thumb/article/2017/1118/6bc632b148d2bc1.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/73/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><span class="page-number current">74</span><a class="page-number" href="/page/75/">75</a><a class="page-number" href="/page/76/">76</a><span class="space">&hellip;</span><a class="page-number" href="/page/111/">111</a><a class="extend next" rel="next" href="/page/75/">Next &raquo;</a>
@@ -1001,19 +1015,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测速</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测速</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,11 +1055,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1077,11 +1091,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">database</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
