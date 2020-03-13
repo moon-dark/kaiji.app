@@ -185,6 +185,195 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vim 配置ctags cscope taglist" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/24/vim 配置ctags cscope taglist/">vim 配置ctags/cscope/taglist</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/24/vim 配置ctags cscope taglist/" class="archive-article-date">
+  	<time datetime="2017-03-24T08:02:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --exclude=out</span><br><span class="line">find . -name &quot;*.h&quot; -o -name &quot;*.c&quot; -o -name &quot;*.cc&quot; -o -name &quot;*.cpp&quot; -o -name &quot;*.java&quot; -o -name &quot;*.mk&quot; -o -name &quot;*.xml&quot; -o -name &quot;*.hpp&quot; -o -name &quot;*.aidl&quot; -o -name &quot;*.AIDL&quot; -not -path &quot;out&quot; &gt; cscope.files</span><br><span class="line">cscope -bkq</span><br><span class="line"></span><br><span class="line">wget https://vim.sourceforge.io/scripts/download_script.php?src_id=19574 -O taglist_46.zip</span><br><span class="line">unzip taglist_46.zip -d ~/.vim/</span><br><span class="line">wget http://cscope.sourceforge.net/cscope_maps.vim</span><br><span class="line">mv cscope_maps.vim ~/.vim/plugin/</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/03/24/vim 配置ctags cscope taglist/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ctags</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">taglist</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VIM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/24/vim 配置ctags cscope taglist/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SELinux配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/23/SELinux配置/">SELinux配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/23/SELinux配置/" class="archive-article-date">
+  	<time datetime="2017-03-23T03:45:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、查看selinux状态<br>查看selinux的详细状态，如果为enable则表示为开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/sbin/sestatus -v</span><br></pre></td></tr></table></figure>
+
+<p>查看selinux的模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># getenforce</span><br></pre></td></tr></table></figure>
+
+<p>2、关闭selinux<br>2.1:永久性关闭（这样需要重启服务器后生效）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sed -i &apos;s/SELINUX=enforcing/SELINUX=disabled/&apos; /etc/selinux/config</span><br></pre></td></tr></table></figure>
+
+<p>2.2:临时性关闭（立即生效，但是重启服务器后失效）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#设置selinux为permissive模式（即关闭）</span><br><span class="line"># setenforce 0</span><br><span class="line">#设置selinux为enforcing模式（即开启）</span><br><span class="line"># setenforce 1</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SELinux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/23/SELinux配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-读《Android安全架构深究》：用户管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -699,173 +888,9 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-《古文观止》/冯婉贞胜英人于谢庄-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/冯婉贞胜英人于谢庄-《古文观止》/">冯婉贞胜英人于谢庄</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/冯婉贞胜英人于谢庄-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>冯婉贞胜英人于谢庄</p>
-<p>〔清〕徐珂</p>
-<p>咸丰庚申，英法联军自海入侵，京洛骚然。距圆明园十里，有村曰谢庄，环村居者皆猎户。中有鲁人冯三保者，精技击。女婉贞，年十九，姿容妙曼，自幼好武术，习无不精。是年，谢庄办团，以三保勇而多艺，推为长。筑石砦土堡于要隘，树帜曰“谢庄团练冯”。一日晌午，谍报敌骑至，旋见一白酋督印度卒约百人，英将也，驰而前。三保戒团众装药实弹，毋妄发，曰：“此劲敌也，度不中而轻发，徒糜弹药，无益吾事。慎之！”</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/冯婉贞胜英人于谢庄-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/冯婉贞胜英人于谢庄-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《古文观止》/邹容传-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/">邹容传</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/邹容传-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>邹容传</p>
-<p>〔清〕章炳麟</p>
-<p>邹容，字威丹，四川巴人。父某，行商陇蜀间，略知书。容少慧敏，年十二，诵“九经”、《史记》、《汉书》皆上口。父以科甲期之，君弗欲，时喜雕刻，父怒，辄榜笞至流血，然愈重爱。容稍长，从成都吕冀文学。与人言，指天画地，非尧舜，薄周孔，无所避。冀文惧，摈之。父令就日本学，时年十七矣。与同学钮永建规设中国协会，未就。学二岁，陆军学生监督姚甲有奸私事，容偕五人排闼入其邸中，榜颊数十，持剪刀断其辫发。事觉，潜归上海，与章炳麟见于爱国学社。是时，社生多习英吉利语，容调之曰：“诸君堪为贾人耳。”社生皆怒，欲殴之。广州大驵冯镜如，故入英吉利籍，方设国民议政厅于上海，招容，容诘镜如曰：“若英吉利人，此国民者，中国民邪？英吉利国民邪？”镜如惭，事中寝。</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/77/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="page-number" href="/page/77/">77</a><span class="page-number current">78</span><a class="page-number" href="/page/79/">79</a><a class="page-number" href="/page/80/">80</a><span class="space">&hellip;</span><a class="page-number" href="/page/111/">111</a><a class="extend next" rel="next" href="/page/79/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/77/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="page-number" href="/page/77/">77</a><span class="page-number current">78</span><a class="page-number" href="/page/79/">79</a><a class="page-number" href="/page/80/">80</a><span class="space">&hellip;</span><a class="page-number" href="/page/112/">112</a><a class="extend next" rel="next" href="/page/79/">Next &raquo;</a>
     </nav>
   
 
@@ -980,15 +1005,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">刷机</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1020,14 +1045,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
@@ -1041,6 +1058,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测速</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
