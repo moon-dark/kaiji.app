@@ -185,6 +185,178 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android中图片在内存中的大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/21/Android中图片在内存中的大小/">Android中图片在内存中的大小</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/21/Android中图片在内存中的大小/" class="archive-article-date">
+  	<time datetime="2017-02-21T03:54:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android中一张图片（Bitmap）占用的内存由以下三个因素决定：</p>
+<blockquote>
+<p>1.图片的像素点个数</p>
+<p>2.单位像素占用的字节数<br>图片占用的内存值为：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">图片长度  *  图片宽度  *  单位像素占用的字节数</span><br></pre></td></tr></table></figure>
+
+<p>单位像素所占用的字节数与图片的解码方式有关。
+        
+          <a class="article-more-a" href="/2017/02/21/Android中图片在内存中的大小/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">calc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/21/Android中图片在内存中的大小/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-查看android手机给应用分配的内存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/21/查看android手机给应用分配的内存/">查看android手机给应用分配的内存</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/21/查看android手机给应用分配的内存/" class="archive-article-date">
+  	<time datetime="2017-02-21T03:42:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>查看android手机给应用分配的内存：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell getprop | grep heap</span><br><span class="line">[dalvik.vm.heapgrowthlimit]: [192m]</span><br><span class="line">[dalvik.vm.heapmaxfree]: [8m]</span><br><span class="line">[dalvik.vm.heapminfree]: [4m]</span><br><span class="line">[dalvik.vm.heapsize]: [512m]</span><br><span class="line">[dalvik.vm.heapstartsize]: [16m]</span><br><span class="line">[dalvik.vm.heaptargetutilization]: [0.75]</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/02/21/查看android手机给应用分配的内存/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/21/查看android手机给应用分配的内存/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Win10环境配置I：软件下载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -696,170 +868,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-《古文观止》/记超山梅花-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/记超山梅花-《古文观止》/">记超山梅花</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/记超山梅花-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>记超山梅花</p>
-<p>〔清〕林纾</p>
-<p>夏容伯同声，嗜古士也，隐于栖溪。余与陈吉士、高啸桐买舟访之。约寻梅于超山。由溪上易小舟，循浅濑至超山之北。沿岸已见梅花。里许，遵陆至香海楼，观宋梅。梅身半枯，侧立水次；古干诘屈，苔蟠其身，齿齿作鳞甲。年久，苔色幻为铜青。旁列十余树，容伯言皆明产也。景物凄黯无可纪，余索然将返。容伯导余过唐玉潜祠下，花乃大盛：纵横交纠，玉雪一色；步武高下，沿梅得径。远馥林麓，近偃陂陀；丛芬积缟，弥满山谷。几四里始出梅窝，阴松列队，下闻溪声，余来船已停濑上矣。余以步，船人以水，沿溪行，路尽适相值也。是晚仍归栖溪。</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/记超山梅花-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/记超山梅花-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《古文观止》/观巴黎油画记-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/观巴黎油画记-《古文观止》/">观巴黎油画记</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/观巴黎油画记-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>观巴黎油画记</p>
-<p>〔清〕薛福成</p>
-<p>光绪十六年春闰二月甲子，余游巴黎蜡人馆。见所制蜡人，悉仿生人，形体态度，发肤颜色，长短丰瘠，无不毕肖。自王公卿相以至工艺杂流，凡有名者，往往留像于馆。或立或卧，或坐或俯，或笑或哭，或饮或博，骤视之，无不惊为生人者。余亟叹其技之奇妙。译者称：“西人绝技，尤莫逾油画，盍驰往油画院，一观普法交战图乎？”</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/观巴黎油画记-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/观巴黎油画记-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/79/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/78/">78</a><a class="page-number" href="/page/79/">79</a><span class="page-number current">80</span><a class="page-number" href="/page/81/">81</a><a class="page-number" href="/page/82/">82</a><span class="space">&hellip;</span><a class="page-number" href="/page/113/">113</a><a class="extend next" rel="next" href="/page/81/">Next &raquo;</a>
@@ -1009,19 +1017,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,11 +1073,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
