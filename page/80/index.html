@@ -185,6 +185,186 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SELinux配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/23/SELinux配置/">SELinux配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/23/SELinux配置/" class="archive-article-date">
+  	<time datetime="2017-03-23T03:45:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、查看selinux状态<br>查看selinux的详细状态，如果为enable则表示为开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /usr/sbin/sestatus -v</span><br></pre></td></tr></table></figure>
+
+<p>查看selinux的模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># getenforce</span><br></pre></td></tr></table></figure>
+
+<p>2、关闭selinux<br>2.1:永久性关闭（这样需要重启服务器后生效）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sed -i &apos;s/SELINUX=enforcing/SELINUX=disabled/&apos; /etc/selinux/config</span><br></pre></td></tr></table></figure>
+
+<p>2.2:临时性关闭（立即生效，但是重启服务器后失效）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#设置selinux为permissive模式（即关闭）</span><br><span class="line"># setenforce 0</span><br><span class="line">#设置selinux为enforcing模式（即开启）</span><br><span class="line"># setenforce 1</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SELinux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/23/SELinux配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-读《Android安全架构深究》：用户管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/23/读《Android安全架构深究》：用户管理/">读《Android安全架构深究》：用户管理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/23/读《Android安全架构深究》：用户管理/" class="archive-article-date">
+  	<time datetime="2017-02-23T10:25:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>用户类型：</strong></p>
+<blockquote>
+<p><strong>主用户</strong>（持有者）：第一个用户，默认创建，一直存在。userID是0，具有所有权限，可以创建、删除其他用户，更改影响所有用户的设置。<br><strong>次要用户</strong>：除受限用户所有后添加的用户。<br><strong>受限用户</strong>：受限用户基于主用户，以特定限制条件共享它的应用、数据和账号。主用户控制哪个应用对手向用户可用。<br><strong>访客用户</strong>：支持一个访客用户，默认禁用。具体用途不明。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/02/23/读《Android安全架构深究》：用户管理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/23/读《Android安全架构深究》：用户管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android中图片在内存中的大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -698,176 +878,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-《古文观止》/邹容传-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/">邹容传</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/邹容传-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>邹容传</p>
-<p>〔清〕章炳麟</p>
-<p>邹容，字威丹，四川巴人。父某，行商陇蜀间，略知书。容少慧敏，年十二，诵“九经”、《史记》、《汉书》皆上口。父以科甲期之，君弗欲，时喜雕刻，父怒，辄榜笞至流血，然愈重爱。容稍长，从成都吕冀文学。与人言，指天画地，非尧舜，薄周孔，无所避。冀文惧，摈之。父令就日本学，时年十七矣。与同学钮永建规设中国协会，未就。学二岁，陆军学生监督姚甲有奸私事，容偕五人排闼入其邸中，榜颊数十，持剪刀断其辫发。事觉，潜归上海，与章炳麟见于爱国学社。是时，社生多习英吉利语，容调之曰：“诸君堪为贾人耳。”社生皆怒，欲殴之。广州大驵冯镜如，故入英吉利籍，方设国民议政厅于上海，招容，容诘镜如曰：“若英吉利人，此国民者，中国民邪？英吉利国民邪？”镜如惭，事中寝。</p>
-        
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/邹容传-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《古文观止》/湖之鱼-《古文观止》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2002/10/13/《古文观止》/湖之鱼-《古文观止》/">湖之鱼</a>
-    </h1>
-  
-
-        
-        <a href="/2002/10/13/《古文观止》/湖之鱼-《古文观止》/" class="archive-article-date">
-  	<time datetime="2002-10-12T17:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2002-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>湖之鱼</p>
-<p>〔清〕林纾</p>
-<p>【原文】</p>
-<p>林子啜茗于湖滨之肆，丛柳蔽窗，湖水皆黯碧如染，小鱼百数来会其下。</p>
-<p>戏嚼豆脯唾之，群鱼争喋；然随喋随逝，继而存者，三四鱼焉。再唾之，坠缀葑草之上，不食矣。始谓鱼之逝者皆饱也。寻丈之外，水纹攒动，争喋他物如故。</p>
-<p>余方悟：钓者将下钩，必先投食以引之。鱼图食而并吞钩。久乃知，凡下食者皆将有钩矣。然则名利之薮，独无钩乎？不及其盛下食之时而去之，其能脱钩而逝者几何也？！</p>
-<p>——选自木刻本《畏庐文集》</p>
-<p>林生坐在西湖边上的茶馆里喝茶，四垂的柳条遮蔽着窗口，一汪湖水，深苍碧绿，犹如染过一般，百余条小鱼正汇聚在窗下的水面。</p>
-<p>他就试着将肉干嚼碎朝水面唾去，借以取乐。鱼儿纷纷争着抢食。然而一边争食一边又游开了，一直觅食而不走的，只不过三四条而已。林生便再嚼食唾下，碎肉沉入水底，粘结在茭白根上，鱼也不再去食它了。林生起先以为鱼的离去是因为都吃饱了的缘故，可离窗口一丈左右的地方，水面泛起一圈圈涟漪，不住地晃动着，那些小鱼如先前一样，又在争食其它东西。</p>
-<p>林生顿时想到：钓鱼的人在垂下鱼钩之际，必定先以鱼饵为引诱，鱼儿要想吃食，便同时吞下钓钩。时间久了，鱼儿便知道，凡是有饵食的地方多半有钓钩。然而，那名利汇聚之所，难道没有别一种“钓钩”么？如果不趁着他人频频下食的时机而及时逃走，能够脱钩而远逸他方的又能有几个人呢？！</p>
-<p>（聂世美）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">《古文观止》</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">古典名著</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2002/10/13/《古文观止》/湖之鱼-《古文观止》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/79/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/78/">78</a><a class="page-number" href="/page/79/">79</a><span class="page-number current">80</span><a class="page-number" href="/page/81/">81</a><a class="page-number" href="/page/82/">82</a><span class="space">&hellip;</span><a class="page-number" href="/page/113/">113</a><a class="extend next" rel="next" href="/page/81/">Next &raquo;</a>
@@ -1025,11 +1035,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
+                <a href="javascript:void(0)" class="js-tag color3">测速</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,11 +1051,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测速</a>
+                <a href="javascript:void(0)" class="js-tag color4">树莓派</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1145,11 +1155,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
+                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSH</a>
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
