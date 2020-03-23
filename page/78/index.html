@@ -185,6 +185,178 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Transmission" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/Transmission/">Linux服务：阿里云/树莓派配置BT下载软件Transmission</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/Transmission/" class="archive-article-date">
+  	<time datetime="2017-12-21T01:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为树莓派在长城宽带多层NAT下面，BT下载软件全红。所以想阿里云上配置BT服务：</p>
+<h3 id="先按照树莓派的方案安装Transmission软件："><a href="#先按照树莓派的方案安装Transmission软件：" class="headerlink" title="先按照树莓派的方案安装Transmission软件："></a>先按照树莓派的方案安装Transmission软件：</h3><p>安装transmission-daemon</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install transmission-daemon</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后第一件事情就是停止transmission-daemon服务，否则你后面做的修改保存不下来的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service transmission-daemon stop</span><br></pre></td></tr></table></figure>
+
+<p>配置transmission-daemon</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/transmission-daemon/settings.json</span><br></pre></td></tr></table></figure>
+
+<p>一般使用，只需要修改一下下面的内容就好了，需要查看完整的参数说明，请<a href="https://trac.transmissionbt.com/wiki/ConfigurationParameters" target="_blank" rel="noopener">参考官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 下面这个参数指定下载地址</span><br><span class="line">&quot;download-dir&quot;: &quot;/home/pi/media/bt/downloads&quot;,</span><br><span class="line"># 下面这个参数指定同时下载的任务数量</span><br><span class="line">&quot;download-queue-size&quot;: 2,</span><br><span class="line"># 下面这个参数表示未完成的任务放在另一个地方，我们就不用了。</span><br><span class="line">&quot;incomplete-dir-enabled&quot;: false,</span><br><span class="line"># 下面的参数开启远程web管理界面</span><br><span class="line">&quot;rpc-enabled&quot;: true,</span><br><span class="line"># 下面这个参数表示web管理界面是否需要密码，我们选是</span><br><span class="line">&quot;rpc-authentication-required&quot;: true,</span><br><span class="line"># 下面的参数就是web管理界面的管理信息，大家看着改成自己的内容就好了</span><br><span class="line">&quot;rpc-username&quot;: &quot;登录名&quot;,</span><br><span class="line">&quot;rpc-password&quot;: &quot;明文密码（保存后自动变成密文）&quot;,</span><br><span class="line">&quot;rpc-port&quot;: 9091,</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/21/Transmission/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/Transmission/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-代理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/代理/">代理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/19/代理/" class="archive-article-date">
+  	<time datetime="2017-12-19T03:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="curl-wget-设置代理："><a href="#curl-wget-设置代理：" class="headerlink" title="curl/wget 设置代理："></a><a href="https://stackoverflow.com/questions/800805/how-do-i-make-curl-ignore-the-proxy" target="_blank" rel="noopener">curl/wget 设置代理：</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 设置系统属性</span><br><span class="line">export http_proxy=http://your-ip-address:port/</span><br><span class="line">export http_proxy=http://user:password@your-proxy-ip-address:port/</span><br><span class="line">export https_proxy=https://your-ip-address:port/</span><br><span class="line">export https_proxy=https://user:password@your-proxy-ip-address:port/</span><br><span class="line"></span><br><span class="line"># 直接使用</span><br><span class="line">curl -x http://proxy_server:proxy_port --proxy-user username:password -L http://url</span><br><span class="line">curl --socks5 125.119.175.48:8909 http://example.com/</span><br><span class="line">curl -x socks5://[user:password@]proxyhost[:port]/ http://example.com/</span><br><span class="line"></span><br><span class="line"># 编辑~/.wgetrc</span><br><span class="line">use_proxy = on</span><br><span class="line">http_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line">https_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line">ftp_proxy =  http://username:password@proxy.server.address:port/</span><br><span class="line"># 直接使用</span><br><span class="line">wget -e &quot;http_proxy=porxyhost:port&quot; www.baidu.com</span><br><span class="line">wget -e use_proxy=yes -e http_proxy=$proxy http://askubuntu.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="curl-wget-忽略代理："><a href="#curl-wget-忽略代理：" class="headerlink" title="curl/wget 忽略代理："></a><a href="https://stackoverflow.com/questions/800805/how-do-i-make-curl-ignore-the-proxy" target="_blank" rel="noopener">curl/wget 忽略代理：</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --noproxy &quot;*&quot; http://www.stackoverflow.com</span><br><span class="line">wget -e use_proxy=no http://www.stackoverflow.com</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">code</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">proxy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/19/代理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android开发常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -678,160 +850,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-NASA延时视频在2-5分钟内显示20年的季节性变化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/">从太空看我们的星球</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/" class="archive-article-date">
-  	<time datetime="2017-11-18T12:48:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>美国宇航局（NASA)全新的延时视频显示了全球20年的季节性景观变化，将这些年份的画面缩短到只有2.5分钟。尽管NASA主要以其太空任务而闻名，但该机构也广泛关注地球科学。这个新视频中的内容是自1997年以来每年由NASA卫星收集的。</p>
-<p><img src="https://static.cnbetacdn.com/thumb/article/2017/1118/6bc632b148d2bc1.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/NASA延时视频在2-5分钟内显示20年的季节性变化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图辑：东京地铁通勤的震撼照片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/">图辑：东京地铁通勤的震撼照片</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/12/图辑：东京地铁通勤的震撼照片/" class="archive-article-date">
-  	<time datetime="2017-11-12T06:14:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/9BAE/production/_97045893_abdf988f-6d8b-44f1-acaa-0537db6890e2.jpg" alt></p>
-<p>就像埋葬在庞贝古城灰烬下的身体的姿势——手臂摆出夸张的动作，或者嘴巴张开，气呼到窗户上，水汽从玻璃上滑落——迈克尔·沃尔夫（Michael Wolf）的《东京挤车》（Tokyo Compression）照片中的许多人也似乎被迫摆出奇怪的姿势。然而，这些都不是摆拍：这些都是地铁通勤每天都会出现的扭曲姿势。</p>
-        
-          <a class="article-more-a" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wall</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/图辑：东京地铁通勤的震撼照片/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/77/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="page-number" href="/page/77/">77</a><span class="page-number current">78</span><a class="page-number" href="/page/79/">79</a><a class="page-number" href="/page/80/">80</a><span class="space">&hellip;</span><a class="page-number" href="/page/115/">115</a><a class="extend next" rel="next" href="/page/79/">Next &raquo;</a>
@@ -1013,11 +1031,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tech</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">tech</a>
               </li>
              
               <li class="article-tag-list-item">
